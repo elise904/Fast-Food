@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda FastFood</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <!-- Fuente moderna y variables de color -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER: reorganizado semánticamente y accesible -->
+    <header class="site-header">
+      <div class="container header-top">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <img class="logo-1" src="images/logo.svg" alt="Logo FastFood" />
+        </a>
+        <!-- Checkbox existente para menú móvil, conservado y mejorado -->
+        <input type="checkbox" id="menu" class="nav-toggle" />
+        <label for="menu" class="nav-toggle-label" aria-label="Abrir menú">
+          <img src="images/menu.png" class="menu-icono" alt="Icono menú" />
+        </label>
+        <nav class="navbar" role="navigation" aria-label="Principal">
+          <div class="menu-1">
+            <ul class="nav-list">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#productos">Productos</a></li>
+            </ul>
+          </div>
+          <img class="logo-2" src="images/logo.svg" alt="Logo secundario" />
+          <div class="menu-2">
+            <ul class="nav-list">
+              <li><a href="#horarios">Horarios</a></li>
+            </ul>
+            <form class="search" role="search" aria-label="Buscar productos">
+              <input type="search" placeholder="Buscar..." aria-label="Buscar" />
+              <button type="submit" class="btn-1">Buscar</button>
+            </form>
+            <div class="socials" aria-label="Redes sociales">
+              <a href="#" aria-label="Facebook"><div class="social"><img src="images/s1.svg" alt="Facebook" /></div></a>
+              <a href="#" aria-label="Instagram"><div class="social"><img src="images/s2.svg" alt="Instagram" /></div></a>
+              <a href="#" aria-label="Twitter"><div class="social"><img src="images/s3.svg" alt="Twitter" /></div></a>
+            </div>
+          </div>
+          <button class="cart-toggle" aria-label="Abrir carrito" title="Carrito">
+            🛒 <span class="cart-count" aria-live="polite">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- HERO: conserva el slider original con Swiper, mejorando clases y accesibilidad -->
+      <div class="header-content container" id="inicio">
+        <div class="swiper mySwiper-1" aria-label="Promociones destacadas">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slaider">
+                <div class="slider-text">
+                  <h1>Hamburguesa</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus incidunt assumenda provident vitae, itaque porro molestiae soluta maxime architecto aliquam in aspernatur dignissimos repudiandae consequatur nemo dolorum velit labore natus.
+                  </p>
+                  <div class="botones">
+                    <a href="#productos" class="btn-1">Comprar</a>
+                    <a href="#productos" class="btn-1 btn-outline">Menú</a>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="images/slider1.png" alt="Hamburguesa clásica" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slaider">
+                <div class="slider-text">
+                  <h1>Torta</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus incidunt assumenda provident vitae, itaque porro molestiae soluta maxime architecto aliquam in aspernatur dignissimos repudiandae consequatur nemo dolorum velit labore natus.
+                  </p>
+                  <div class="botones">
+                    <a href="#productos" class="btn-1">Comprar</a>
+                    <a href="#productos" class="btn-1 btn-outline">Menú</a>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="images/slider2.png" alt="Torta especial" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slaider">
+                <div class="slider-text">
+                  <h1>Hamburguesa</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus incidunt assumenda provident vitae, itaque porro molestiae soluta maxime architecto aliquam in aspernatur dignissimos repudiandae consequatur nemo dolorum velit labore natus.
+                  </p>
+                  <div class="botones">
+                    <a href="#productos" class="btn-1">Comprar</a>
+                    <a href="#productos" class="btn-1 btn-outline">Menú</a>
+                  </div>
+                </div>
+                <div class="slider-img">
+                  <img src="images/slider3.png" alt="Hamburguesa doble" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Corrección de clases para Swiper navigation/pagination -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN: Productos y tabs conservados, corrigiendo ids duplicados y mejorando semántica -->
+    <main id="productos" class="products">
+      <div class="tabs container">
+        <!-- Corregido id/for del primer tab -->
+        <input type="radio" name="tabs" id="tab1" checked class="tabInput" value="1" />
+        <label for="tab1">Hamburguesas</label>
+        <div class="tab" aria-labelledby="tab1">
+          <div class="swiper mySwiper-2" id="swiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food1.png" alt="Hamburguesa 1" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Hamburguesa 1" data-price="80" data-img="images/food1.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food2.png" alt="Hamburguesa 2" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Hamburguesa 2" data-price="80" data-img="images/food2.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food3.png" alt="Hamburguesa 3" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Hamburguesa 3" data-price="80" data-img="images/food3.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+        <input type="radio" name="tabs" id="tab2" class="tabInput" value="2" />
+        <label for="tab2">Burritos</label>
+        <div class="tab" aria-labelledby="tab2">
+          <div class="swiper mySwiper-2" id="swiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food4.png" alt="Burrito 1" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Burrito 1" data-price="80" data-img="images/food4.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food5.png" alt="Burrito 2" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Burrito 2" data-price="80" data-img="images/food5.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food6.png" alt="Burrito 3" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Burrito 3" data-price="80" data-img="images/food6.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+
+        <input type="radio" name="tabs" id="tab3" class="tabInput" value="3" />
+        <label for="tab3">Variedad</label>
+        <div class="tab" aria-labelledby="tab3">
+          <div class="swiper mySwiper-2" id="swiper3">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food7.png" alt="Variedad 1" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Variedad 1" data-price="80" data-img="images/food7.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food8.png" alt="Variedad 2" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Variedad 2" data-price="80" data-img="images/food8.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+              <div class="swiper-slide">
+                <article class="product">
+                  <div class="product-img">
+                    <h4>Nuevo</h4>
+                    <img src="images/food9.png" alt="Variedad 3" />
+                  </div>
+                  <div class="product-txt">
+                    <h4>Producto</h4>
+                    <p>calidad premium</p>
+                    <span class="price">$80.00</span>
+                    <button class="btn-1 add-to-cart" data-name="Variedad 3" data-price="80" data-img="images/food9.png">Añadir</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- INFO: sección informativa original, estilizada -->
+    <section class="info container" id="servicios">
+      <div class="info-img">
+        <img src="images/info.png" alt="Información del servicio" />
+      </div>
+      <div class="info-txt">
+        <h2>Información</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum perferendis eius distinctio earum sunt eveniet fuga alias amet voluptatem quos ullam, atque deleniti iure consectetur odio error sequi similique aperiam.
+        </p>
+        <a href="#contacto" class="btn-2">Más información</a>
+      </div>
+    </section>
+
+    <!-- HORARIO -->
+    <section class="horario" id="horarios">
+      <div class="horario-info container">
+        <h2>Horario</h2>
+        <div class="horario-txt">
+          <div class="txt">
+            <h4>Dirección</h4>
+            <p>Rerum perferendis eius distinctio</p>
+            <p>earum sunt eveniet</p>
+          </div>
+          <div class="txt">
+            <h4>Horario</h4>
+            <p>Lunes a Viernes: 9:00am - 9:00pm</p>
+            <p>Sábado a Domingo: 11:00am - 7:00pm</p>
+          </div>
+          <div class="txt">
+            <h4>Teléfono</h4>
+            <p>5555555</p>
+            <p>555555</p>
+          </div>
+          <div class="txt">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+              <a href="#" aria-label="Facebook"><div class="social"><img src="images/s1.svg" alt="Facebook" /></div></a>
+              <a href="#" aria-label="Instagram"><div class="social"><img src="images/s2.svg" alt="Instagram" /></div></a>
+              <a href="#" aria-label="Twitter"><div class="social"><img src="images/s3.svg" alt="Twitter" /></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARRITO: overlay simple -->
+    <aside class="cart" aria-live="polite" aria-hidden="true">
+      <div class="cart-inner">
+        <button class="cart-close" aria-label="Cerrar carrito">×</button>
+        <h3>Carrito</h3>
+        <ul class="cart-items"></ul>
+        <div class="cart-footer">
+          <span>Total: $<span class="cart-total">0.00</span></span>
+          <button class="btn-1 btn-checkout" type="button">Pagar</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTACTO / SUSCRIPCIÓN -->
+    <section id="contacto" class="contacto">
+      <div class="container contacto-inner">
+        <div class="contacto-info">
+          <h2>Contáctanos</h2>
+          <p>¿Tienes dudas o comentarios? Escríbenos y te responderemos.</p>
+        </div>
+        <form class="form" autocomplete="on">
+          <div class="form-row">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-row">
+            <label for="correo">Correo</label>
+            <input id="correo" name="correo" type="email" placeholder="tucorreo@ejemplo.com" required />
+          </div>
+          <div class="form-row">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+          </div>
+          <button class="btn-1" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="images/logo.svg" alt="Logo FastFood" />
+          <p>© <span id="year"></span> FastFood. Todos los derechos reservados.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Enlaces de pie de página">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#productos">Productos</a>
+          <a href="#horarios">Horarios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
